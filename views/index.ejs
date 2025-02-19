@@ -1,0 +1,111 @@
+<%- include('partials/header.ejs') %>
+
+    <section>
+        <div class="main__header">
+            <img src="<%= playlist.cover_image%>" alt="">
+            <div>
+                <p class="main__header-playlist">Favorite Playlist</p>
+                <h1><%= playlist.name %></h1>
+                <p class="main__header-desc"><%= playlist.description %></p>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Album</th>
+                        <th>Date added</th>
+                        <th>
+                            <img class="time-list-item" src="/images/time.svg" alt=""> 
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (favoritePlaylist.length === 0) { %>
+                        <tr>
+                            <td class="no-favorite-list" colspan="5">You haven't added any favorite songs</td>
+                        </tr>
+                    <% } else { %>
+                        <% favoritePlaylist.forEach((track, index) => { %>
+                        <tr  class="favorite-list">
+                            <td><%= index + 1 %></td>
+                            <td>
+                                <div class="info-song-container">
+                                    <img src="<%= track.image %>" alt="">
+                                    <div>
+                                        <p class="list_title"><%= track.title %></p>
+                                        <p class="list_artist"><%= track.artist %></p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><%= track.album %></td>
+                            <td><%= new Date(track.created_at).toDateString().slice(4, 16)%></td>
+                            <td>
+                                <%= new Date(track.duration + (track.duration % 1000 ? 1000 - (track.duration % 1000) : 0)).toISOString().slice(14, 19) %>
+                            </td>
+                            <td>
+                                <form action="/delete" method="post">
+                                    <input type="hidden" name="track_id" value="<%= track.id %>">
+                                    <button type="submit" style="border: none; background: none; cursor: pointer;">
+                                        <img class="close-list-item" src="/images/close.svg" alt="">
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+<%- include('partials/footer.ejs') %>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1><%= playlist.name %></h1>
+        <p class="lead"><%= playlist.description %></p>
+
+        <div class="row">
+            <% playlist.tracks.forEach(track => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <% if (track.image) { %>
+                            <img src="<%= track.image %>" class="card-img-top" alt="<%= track.name %>">
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= track.name %></h5>
+                            <p class="card-text">
+                                Artist: <%= track.artist %><br>
+                                Album: <%= track.album %>
+                            </p>
+                            <% if (track.preview_url) { %>
+                                <audio controls>
+                                    <source src="<%= track.preview_url %>" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html> -->

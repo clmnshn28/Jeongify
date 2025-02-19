@@ -1,0 +1,151 @@
+
+
+main{
+    flex: 1;
+    padding: 1rem 3rem;
+    margin: 5.4rem 0 0.7rem;
+}
+
+section{
+    border-radius: 20px;
+    /* background-color: aliceblue; */
+     background: linear-gradient(to bottom, #69853c 20%, var(--bg-dark) 80%);
+    background-size: 100% 65vh; /* Ensures the gradient covers the entire area */
+    background-repeat: no-repeat;
+    background-position: top;
+    height: auto;
+    min-height: 72vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__header-playlist{
+    font-family: 'inter';
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.main__header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    color: var(--text-primary);
+}
+
+.main__header img{
+    width: 15%;
+    height: 15%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px #000000b8;
+}
+
+.main__header h1{
+    font-size: 5rem;
+}
+
+.main__header-desc{
+    color: var( --text-secondary);
+    font-family: 'inter';
+    font-weight: 600;
+}
+
+
+/* table container */
+.table-container{
+    padding: 1.5rem 2rem;
+    background-color:  #21212156;
+    backdrop-filter: blur(10px);
+    flex: 1;
+    border-radius: 0 0 20px 20px;
+}
+table{
+    width: 100%;
+    color: var(--text-secondary);
+    border-collapse:collapse;
+    font-family: "inter";
+}
+
+thead{
+    border-bottom: 1px solid #e0e0e021;
+    text-align: left;
+}
+
+
+th,td{
+    padding: 0.8rem 0.5rem 0.6rem;
+}
+
+th:first-child,
+td:first-child{
+    text-align: center;
+}
+
+.favorite-list{
+    transition: all 0.3s ease-in-out;
+}
+
+.favorite-list:hover {
+    background-color: #b3b3b32a;
+}
+
+.favorite-list:hover td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.favorite-list:hover td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.info-song-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-song-container img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.list_title{
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.list_artist{
+    font-size: 0.9rem;
+}
+
+td:nth-child(5),
+th:nth-child(5){
+    text-align: center;
+    width: 20%;
+}
+
+
+.time-list-item{
+    width: 25px;
+    height: 25px;
+}
+
+th:last-child,
+td:last-child{
+    width: 5%;
+    text-align: center;
+}
+
+.close-list-item{
+    width: 35px;
+    height: 35px;
+}
+
+
+.no-favorite-list{
+    padding: 4rem;
+    opacity: 0.3;
+}

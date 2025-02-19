@@ -1,0 +1,12 @@
+
+
+
+
+
+footer{
+    text-align: center;
+    padding: 1.3em 1.3em 1em;
+    margin-top: 0 auto;
+    background-color: var(--bg-light-dark);
+    color:var(--text-secondary);
+}

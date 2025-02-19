@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Tracker | Spotify Playlist</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+<body>
+    <header>
+        <div class="headerlogo">
+            <div class="loader">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <h1>Jeongify</h1>
+        </div>
+        <form action="/add" method="post">
+            <button class="home-button" type="button">
+                <img class="home-icon" src="/images/home.svg" alt="home icon">
+            </button>
+            <div class="input-container">
+                <img class="input-search-icon" src="/images/search.svg" alt="search icon">
+                <input type="text" id="searchInput" placeholder="What do you what to add?" autocomplete="off">
+                <div class="dropdown" id="dropdown">
+                    <% playlist.tracks.forEach(track =>{ %>
+                    <div class="dropdown-item">
+                        <img src="<%= track.image %>" alt="">
+                        <div>
+                            <p class="dropdown_title"><%= track.name %></p>
+                            <p class="dropdown_artist"><%= track.artist %></p>
+                        </div>
+                        <form action="/add" method="post">
+                            <input type="hidden" name="track_name" value="<%= track.name %>">
+                            <input type="hidden" name="track_artist" value="<%= track.artist %>">
+                            <input type="hidden" name="track_album" value="<%= track.album %>">
+                            <input type="hidden" name="track_image" value="<%= track.image %>">
+                            <input type="hidden" name="track_duration" value="<%= track.duration %>">
+                            <button type="submit" class="add-list-item-btn">
+                                &plus;
+                            </button>
+                        </form>
+                    </div>
+                    <% }); %>
+                    <div class="dropdown-item-no-available">
+                        <p>Oops! No matches found!</p>    
+                    </div>
+                </div>
+            </div>
+        </form>
+    </header>
+    <main>
+

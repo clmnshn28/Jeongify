@@ -1,0 +1,239 @@
+header{
+    font-family: 'SnowyNight';
+    color: var(--accent);
+    background-color: var(--bg-dark);
+    padding: 0.9rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.headerlogo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1{
+    font-size: 3.5rem;
+}
+
+/* From Uiverse.io by aryamitra06 */ 
+.loader {
+    display: flex;
+    align-items: center;
+}
+  
+.bar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color:var(--accent);
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
+}
+  
+.bar:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+}
+  
+.bar:nth-child(3) {
+    animation-delay: .5s;
+}
+  
+@keyframes scale-up4 {
+    20% {
+      background-color: var(--text-secondary);
+      transform: scaleY(1.5);
+    }
+  
+    40% {
+      transform: scaleY(1);
+    }
+}
+
+
+  
+header form{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* home container */
+.home-button{
+    border-radius: 50%;
+    background-color: var(--bg-light-dark);
+    border: none;
+    padding: 0.6rem 0.8rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-button:hover{
+    transform:  scale(1.05);
+    background-color: #2a2a2a;
+}
+
+.home-icon{
+    width: 31px;
+    height: 31px;
+}
+
+/* input container */
+
+.input-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 28rem;
+}
+
+.input-search-icon{
+    position: absolute;
+    left: 4%;
+    width: 27px;
+    height: 27px;
+    pointer-events: none; 
+}
+
+form input{
+    padding: 1rem 4rem 0.9rem 3.5rem;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-family: "inter", sans-serif;
+    width: 100%;
+    border: 2px solid transparent;
+    background-color: var( --bg-light-dark);
+    transition: border 0.3s ease-in-out, 
+    box-shadow 0.3s ease-in-out,
+    background-color 1s ease-in-out;
+}
+
+form input:hover{
+    border: 2px solid #cccccc;
+    background-color: #2a2a2a;
+}
+
+form input:focus{
+    outline: none;
+    border: 2px solid var(--text-primary);
+    background-color: #2a2a2a;
+}
+
+form input:not(:focus) {
+    border: 2px solid transparent;
+    transition: border 0.5s ease-in-out;
+}
+
+
+
+
+/* DROPDOWN */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: var(--bg-light-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-height: 420px;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding:1rem;
+}
+
+.dropdown::-webkit-scrollbar{
+    width: 10px;
+}
+
+.dropdown::-webkit-scrollbar-track{
+    background-color: #2a2a2a;
+    border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb{
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    background-color: #158d3f;
+}
+
+.dropdown-item{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 20px;
+    font-family: "inter";
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item:hover{
+    background-color: #b3b3b32a;
+}
+
+.dropdown-item:not(:last-child){
+    margin-bottom: 0.3rem;
+}
+
+.dropdown-item img{
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+}
+
+.dropdown_title{
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.dropdown_artist{
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+.dropdown-item div {
+    flex: 1; 
+}
+
+
+.add-list-item-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-right: 0 auto;
+    background-color: var(--accent);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.add-list-item-btn:hover{
+    transform: scale(1.1);
+}
+
+
+.dropdown-item-no-available{
+    text-align: center;
+    font-family: "inter";
+    color: var(--text-secondary);
+    display: none;
+}
