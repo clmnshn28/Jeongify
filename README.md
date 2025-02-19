@@ -18,8 +18,8 @@
 ## 💡 Get Started
 ### 1️⃣ Clone the Repository
 ```bash
-https://github.com/clmnshn28/Playlist-Manager.git
-cd jeongify
+https://github.com/clmnshn28/Jeongify.git
+cd Jeongify
 ```
 ### 2️⃣ Install Dependencies
 ```bash
