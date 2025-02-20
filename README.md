@@ -33,6 +33,7 @@ DB_PASSWORD = your_postgresql_password
 DB_NAME = your_postgresql_database_name
 DB_HOST = your_postgresql_host_name
 
+SPOTIFY_PLAYLIST_ID = your_playlist_id
 SPOTIFY_CLIENT_ID = your_client_id
 SPOTIFY_CLIENT_SECRET = your_client_secret
 ```

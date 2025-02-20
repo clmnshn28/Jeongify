@@ -52,13 +52,13 @@ app.get("/", async(req, res) => {
         const response = await db.query("SELECT * FROM tracks");
         listFavoriteItems = response.rows;
 
-        const result = await axios.get('https://api.spotify.com/v1/playlists/2Yc5GXwVtX4Lsg4vKkCs5C', {
+        const result = await axios.get(`https://api.spotify.com/v1/playlists/${process.env.SPOTIFY_PLAYLIST_ID}`, {
             headers: { Authorization: `Bearer ${token}`}
         });
   
         const playlistData = {
             name: result.data.name,
-            description: result.data.description,
+            description: result.data.description || "Enjoy this mix of amazing tracks!",
             cover_image: result.data.images[0].url,
             tracks: result.data.tracks.items.map(item => ({
                 name: item.track.name,
